@@ -25,6 +25,12 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   background-color: $tertiary;
+  background: url("https://wallpapercave.com/wp/wp3210511.png") no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
 .info {
@@ -39,45 +45,58 @@ body {
 .info.info-danger {
   background-color: #e73f3f;
 }
+.main-nav {
+  display: inline-block;
+  background-color: $primary;
+  padding: 0px;
+  color: white;
+}
 
 // --------------------
 // Style for App component
 .App {
-  // text-align: center;
+  text-align: center;
 
-  .App-header {
-    background-color: $primary;
-    padding: 0px;
+  a {
     color: white;
-
-    a {
-      color: white;
-      padding: 0 5px;
-      text-decoration: unset;
-      font-size: 1.3em;
-    }
-
-    a.active {
-      font-weight: bold;
-    }
+    padding: 0 5px;
+    text-decoration: unset;
+    font-size: 1.3em;
   }
 
-  .App-title {
-    font-size: 1.5em;
+  a.active {
+    font-weight: bold;
+    border-radius: 20px;
+    border: solid 2px #0d60e5;
+    background-color: black;
+    padding: 10px;
+  }
+}
+
+.App-title {
+  font-size: 1.3em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-logo {
+  // animation: App-logo-spin infinite 30s linear;
+  background-color: rgb(249, 249, 253);
+  border-radius: 20px;
+  border: solid 2px #0d60e5;
+  padding: 0 0.3vw;
+  width: 8vh;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
 
-  .App-intro {
-    font-size: large;
-  }
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -104,25 +123,32 @@ body {
 
 .Login {
   width: 60vw;
-  margin-top: 10vh;
+  margin-top: 20vh;
   padding: 2%;
   border-radius: 10px;
   background: #0d60e5;
 }
 
-body {
-  background: url("https://wallpapercave.com/wp/wp3210511.png") no-repeat center
-    center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-
 .home-container {
-  background: #b8cdee !important;
+  background: #01305f !important;
+  border-radius: 20px;
+  margin-top: 20vh !important;
 }
 
+.main-logo-group {
+  background-color: black;
+  border-radius: 0px;
+  // box-shadow: 0 0 10px 10px #141414;
+}
+
+.logo-title {
+  margin-left: 10px;
+}
+
+.play-btn {
+  float: right;
+  width: 5vh;
+}
 // .Login {
 //   display: flex;
 //   justify-content: center;

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Route, Link, NavLink, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Countries from "./pages/Countries";
-import AddCountry from "./pages/AddCountry";
+// import Countries from "./pages/Countries";
+// import AddCountry from "./pages/AddCountry";
 import Secret from "./pages/Secret";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import api from "../api";
-import logo from "../logo.svg";
+import synthlogo from "../components/synthlogo.svg";
 
 export default class App extends Component {
   constructor(props) {
@@ -24,27 +24,28 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <navbar className="navbar">
-            <h1 className="">FACEBOOK</h1>
-            <NavLink to="/" exact>
-              Home
-            </NavLink>
-            {/* <NavLink to="/countries">Countries</NavLink> */}
-            {/* <NavLink to="/add-country">Add country</NavLink> */}
-            {!api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
-            {/* <NavLink to="/profile">Profile</NavLink> */}
-            {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
-            {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
-            {api.isLoggedIn() && (
-              <Link to="/" onClick={e => this.handleLogoutClick(e)}>
-                Logout
-              </Link>
-            )}
-            {/* <NavLink to="/secret">Secret</NavLink> */}
-          </navbar>
-        </header>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <nav className="navbar main-nav fixed-top">
+          <div className="navbar main-logo-group">
+            <img className="App-logo" src={synthlogo} alt="" />
+            <h1 className="logo-title">MIDIBank</h1>
+          </div>
+          <NavLink to="/" exact>
+            Home
+          </NavLink>
+          {/* <NavLink to="/countries">Countries</NavLink> */}
+          {/* <NavLink to="/add-country">Add country</NavLink> */}
+          {!api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
+          {/* <NavLink to="/profile">Profile</NavLink> */}
+          {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
+          {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
+          {api.isLoggedIn() && (
+            <Link to="/" onClick={e => this.handleLogoutClick(e)}>
+              Logout
+            </Link>
+          )}
+          {/* <NavLink to="/secret">Secret</NavLink> */}
+        </nav>
 
         <Switch>
           <Route path="/" exact component={Home} />
