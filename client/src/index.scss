@@ -1,14 +1,15 @@
 // --------------------
 // Definition of variables
-$primary: #32c3ff;
-
+$primary: #178cfa;
+$secondary: #0d60e5;
+$tertiary: #cdd5dd;
 
 // ----------------------------------------
 // To install Boostrap:
 // 1) Run in the client folder: $ npm i bootstrap
 // 2) Import bootstrap with the following line
 // @import '../node_modules/bootstrap/scss/bootstrap.scss';
-// 
+//
 // To install Reactstrap:
 // 1) Run in the client folder: $ npm i reactstrap
 // 2) Go to the official documentation and take some examples: https://reactstrap.github.io/
@@ -16,13 +17,14 @@ $primary: #32c3ff;
 // <Button color="danger">Danger!</Button>
 // ----------------------------------------
 
-
 // --------------------
 // Style reusable for all components
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  background-color: $tertiary;
 }
 
 .info {
@@ -41,22 +43,18 @@ body {
 // --------------------
 // Style for App component
 .App {
-  text-align: center;
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-  }
+  // text-align: center;
 
   .App-header {
     background-color: $primary;
-    padding: 20px;
+    padding: 0px;
     color: white;
 
     a {
       color: white;
       padding: 0 5px;
       text-decoration: unset;
+      font-size: 1.3em;
     }
 
     a.active {
@@ -99,3 +97,21 @@ body {
     color: $primary;
   }
 }
+
+// .Login {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 10vh;
+//   border: solid 8px $primary;
+//   border-radius: 10px;
+//   background-color: grey;
+//   width: 50%;
+// }
+
+// .login-title {
+//   margin-right: 5vw;
+// }
+
+// .main-input {
+//   margin: 10px 0;
+// }
