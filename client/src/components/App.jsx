@@ -27,7 +27,7 @@ export default class App extends Component {
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <navbar className="navbar">
-            <h1 className="">MIDIP3</h1>
+            <h1 className="">FACEBOOK</h1>
             <NavLink to="/" exact>
               Home
             </NavLink>
@@ -42,18 +42,18 @@ export default class App extends Component {
                 Logout
               </Link>
             )}
-            <NavLink to="/secret">Secret</NavLink>
+            {/* <NavLink to="/secret">Secret</NavLink> */}
           </navbar>
         </header>
 
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/add-country" component={AddCountry} />
+          {/* <Route path="/countries" component={Countries} /> */}
+          {/* <Route path="/add-country" component={AddCountry} /> */}
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/secret" component={Secret} />
-          <Route render={() => <h2>404</h2>} />
+          <Route render={() => <h2>404 - Page not found</h2>} />
         </Switch>
       </div>
     );

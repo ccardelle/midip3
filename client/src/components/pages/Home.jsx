@@ -8,19 +8,16 @@ export default class Home extends Component {
   // }
   render() {
     return (
-      <div className="Home">
-        <h2>Home</h2>
-        <p>
-          This is the homepage. Blue bottle meh poke post-ironic forage
-          chicharrones pour-over thundercats. Meggings beard polaroid chillwave
-          narwhal kitsch glossier ramps intelligentsia truffaut taxidermy
-          artisan lomo fashion axe subway tile. Skateboard lyft VHS prism
-          intelligentsia salvia semiotics lomo brooklyn. Viral kitsch cronut,
-          DIY palo santo la croix unicorn four dollar toast beard irony.
-          Whatever chambray kinfolk gochujang, hashtag letterpress wayfarers
-          locavore fanny pack before they sold out. Squid 8-bit raw denim hot
-          chicken. Fixie drinking vinegar lo-fi quinoa meditation jianbing.
-        </p>
+      <div className="container">
+        <div className="card border-0 shadow my-5 home-container">
+          <div className="card-body p-5">
+            <h1 className="font-weight-light">You are HOME</h1>
+            <p className="lead">This is home, in case you didnt know.</p>
+            <p className="lead">Scroll down...</p>
+            <div style={{ height: 700 }} />
+            <p className="lead mb-0">!!!!!!</p>
+          </div>
+        </div>
       </div>
     );
   }

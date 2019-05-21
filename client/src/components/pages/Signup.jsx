@@ -37,8 +37,8 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className="Signup">
-        <h2>Signup</h2>
+      <div className="Login container">
+        <h2 className="text-center">Signup</h2>
         <form className="text-center border border-light p-5">
           Username:{" "}
           <input
@@ -67,7 +67,12 @@ export default class Signup extends Component {
             onChange={this.handleInputChange}
           />{" "}
           <br />
-          <button onClick={e => this.handleClick(e)}>Signup</button>
+          <button
+            className="btn btn-info btn-block my-4 btncolors"
+            onClick={e => this.handleClick(e)}
+          >
+            Signup
+          </button>
         </form>
         {this.state.message && (
           <div className="info info-danger">{this.state.message}</div>

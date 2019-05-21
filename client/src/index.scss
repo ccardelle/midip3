@@ -1,6 +1,6 @@
 // --------------------
 // Definition of variables
-$primary: #178cfa;
+$primary: #080bd8;
 $secondary: #0d60e5;
 $tertiary: #cdd5dd;
 
@@ -96,6 +96,31 @@ body {
     font-size: 1.2em;
     color: $primary;
   }
+}
+
+.btncolors {
+  background-color: $primary !important;
+}
+
+.Login {
+  width: 60vw;
+  margin-top: 10vh;
+  padding: 2%;
+  border-radius: 10px;
+  background: #0d60e5;
+}
+
+body {
+  background: url("https://wallpapercave.com/wp/wp3210511.png") no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.home-container {
+  background: #b8cdee !important;
 }
 
 // .Login {

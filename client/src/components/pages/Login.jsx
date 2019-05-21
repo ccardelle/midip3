@@ -31,8 +31,8 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
-        <h2 className="login-title">Login</h2>
+      <div className="Login container">
+        <h2 className="text-center">Login</h2>
 
         <form className="text-center border border-light p-5">
           Username:{" "}
@@ -54,7 +54,7 @@ export default class Login extends Component {
           />{" "}
           <br />
           <button
-            className="btn btn-info btn-block my-4"
+            className="btn btn-info btn-block my-4 btncolors"
             onClick={e => this.handleClick(e)}
           >
             Login
