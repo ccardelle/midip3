@@ -8,6 +8,8 @@ const MidiSchema = new Schema(
     owner: { type: Schema.Types.ObjectId, ref: "User" }
   },
   {
+    rating: Number,
+    filepath: String,
     timestamps: {
       createdAt: "created_at",
       updatedAt: "updated_at"

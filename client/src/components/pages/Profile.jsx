@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import synthlogo from "../synthlogo.png";
+import synthlogo from "../../components/synthlogo.svg";
 
 class Profile extends Component {
   state = {};
@@ -10,7 +10,7 @@ class Profile extends Component {
           <div className="card-body p-5">
             <br />
             <div>
-              <img className="profile-pic" src="" alt={synthlogo} />
+              <img className="profile-pic img-circle" src={synthlogo} alt="" />
               <h1 className="font-weight-light">USER NAME</h1>
             </div>
           </div>
