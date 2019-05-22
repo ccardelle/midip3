@@ -1,22 +1,23 @@
 import React, { Component } from "react";
-import TrackList from "./TrackList";
-export default class Home extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //   }
-  // }
+import synthlogo from "../synthlogo.png";
+
+class Profile extends Component {
+  state = {};
   render() {
     return (
       <div className="container">
         <div className="card border-0 shadow my-5 home-container">
           <div className="card-body p-5">
-            <h1 className="font-weight-light">Recent Uploads</h1>
             <br />
-            <TrackList />
+            <div>
+              <img className="profile-pic" src="" alt={synthlogo} />
+              <h1 className="font-weight-light">USER NAME</h1>
+            </div>
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default Profile;
