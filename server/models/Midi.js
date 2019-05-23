@@ -9,7 +9,7 @@ const MidiSchema = new Schema(
   },
   {
     rating: Number,
-    filepath: String,
+    file: String,
     timestamps: {
       createdAt: "created_at",
       updatedAt: "updated_at"
