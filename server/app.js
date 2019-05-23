@@ -41,6 +41,19 @@ app.use(cookieParser());
 // Example: http://localhost:5000/favicon.ico => Display "~/client/build/favicon.ico"
 app.use(express.static(path.join(__dirname, "../client/build")));
 
+app.use(express.static(path.join(__dirname, "../client/uploads")));
+
+app.use(express.static(path.join(__dirname, "uploads")));
+
+//app.use('/static', express.static(path.join(__dirname, 'src/client/public')))
+
+//,exp.directory(__dirname + '/public/images'));
+
+//app.use(express.static("./uploads"));
+
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+
 // Enable authentication using session + passport
 app.use(
   session({
@@ -67,6 +80,10 @@ app.use("/api/*", (req, res, next) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 // Error handler
 app.use((err, req, res, next) => {
