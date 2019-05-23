@@ -105,10 +105,17 @@ export default {
       "------------------- ",
       data
     );
+    const formData = new FormData();
+    formData.append("file", uploadInfo);
 
     return service
-      .post("/upload", data)
+      .post("/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
       .then(res => {
+        console.log("adfasdfsaf", res);
         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
         // localStorage.setItem("user", JSON.stringify(res.data));
         return res.data;
