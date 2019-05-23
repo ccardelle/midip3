@@ -7,6 +7,7 @@ import Secret from "./pages/Secret";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
+import Upload from "./pages/Upload";
 import api from "../api";
 import synthlogo from "../components/synthlogo.svg";
 
@@ -38,6 +39,9 @@ export default class App extends Component {
           {/* <NavLink to="/add-country">Add country</NavLink> */}
           {!api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
           {/* <NavLink to="/profile">Profile</NavLink> */}
+          <NavLink to="/upload" exact>
+            Upload
+          </NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && (
@@ -55,6 +59,7 @@ export default class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={Login} />
+          <Route path="/upload" component={Upload} />
           <Route path="/secret" component={Secret} />
           <Route render={() => <h2>404 - Page not found</h2>} />
         </Switch>

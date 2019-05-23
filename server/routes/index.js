@@ -37,18 +37,22 @@ router.get("/profile", (req, res, next) => {
 // });
 
 // Create MIDI File
-router.post("/upload", (req, res, next) => {
-  Midi.create({
-    name: req.body.name,
-    description: req.body.description,
-    file: req.body.file
-  })
-    .then(() => {
-      res.json({ data: req.body });
+router.post(
+  "/upload",
+  uploadCloud.single("the-profile-pic"),
+  (req, res, next) => {
+    Midi.create({
+      name: req.body.name,
+      description: req.body.description,
+      file: req.file.url
     })
-    .catch(err => {
-      next(err);
-    });
-});
+      .then(() => {
+        res.json({ data: req.body });
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+);
 
 module.exports = router;
