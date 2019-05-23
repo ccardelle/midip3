@@ -5,7 +5,7 @@ class Upload extends React.Component {
   state = {
     name: "",
     description: "",
-    file: ""
+    file: null
   };
 
   handleInputChange(event) {
@@ -14,23 +14,47 @@ class Upload extends React.Component {
     });
   }
 
+  handleFileInputChange(event) {
+    console.log(
+      "the event target on file change >>>>>>>>>> ",
+      event.target.files[0]
+    );
+    this.setState({
+      [event.target.name]: event.target.files[0]
+    });
+  }
+
   handleClick(e) {
     e.preventDefault();
+    console.log("this is the state prior to the submit ------ ", this.state);
     let data = {
       name: this.state.name,
-      description: this.state.description
+      description: this.state.description,
+      file: this.state.file
 
       // password: this.state.password
     };
 
     api
-      .upload(data)
+      .upload(this.state.file, data)
       .then(result => {
-        console.log("SUCCESS!");
+        console.log("SUCCESS! [==================== ", result);
         this.props.history.push("/"); // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() }));
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //   var data = {
+  //     description: this.state.description
+  //   }
+  //   console.log("this is the data being passed -------- ", data);
+  //   // Reuse of the method "addPicture" from the file '../api'
+  //   api.addPicture(this.state.file, data).then(result=>{
+  //     console.log("the fruits of our labor ---------- ", result)
+  //   })
+  // }
 
   // componentDidMount() {
   //   api
@@ -51,7 +75,7 @@ class Upload extends React.Component {
                 <form
                   action="/upload"
                   method="POST"
-                  enctype="multipart/form-data"
+                  encType="multipart/form-data"
                 >
                   <label>Name</label>
                   <input
@@ -77,9 +101,9 @@ class Upload extends React.Component {
                   <input
                     className="form-control mb-4"
                     type="file"
-                    name="midi-file"
+                    name="file"
                     onChange={e => {
-                      this.handleInputChange(e);
+                      this.handleFileInputChange(e);
                     }}
                   />
 
