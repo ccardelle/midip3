@@ -31,7 +31,7 @@ router.post("/upload", (req, res, next) => {
     owner: req.user._id
   })
     .then(() => {
-      res.redirect("/secret");
+      res.redirect("/");
       // res.json({ success: "heeey" });
     })
     .catch(err => {
