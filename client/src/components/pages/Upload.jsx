@@ -3,9 +3,8 @@ import api from "../../api";
 
 class Upload extends React.Component {
   state = {
-    name: "",
-    description: "",
-    file: null
+    title: "",
+    joke: ""
   };
 
   handleInputChange(event) {
@@ -14,29 +13,16 @@ class Upload extends React.Component {
     });
   }
 
-  handleFileInputChange(event) {
-    console.log(
-      "the event target on file change >>>>>>>>>> ",
-      event.target.files[0]
-    );
-    this.setState({
-      [event.target.name]: event.target.files[0]
-    });
-  }
-
   handleClick(e) {
     e.preventDefault();
     console.log("this is the state prior to the submit ------ ", this.state);
     let data = {
-      name: this.state.name,
-      description: this.state.description,
-      file: this.state.file
-
-      // password: this.state.password
+      title: this.state.title,
+      joke: this.state.joke
     };
 
     api
-      .upload(this.state.file, data)
+      .upload(data)
       .then(result => {
         console.log("SUCCESS! [==================== ", result);
         this.props.history.push("/"); // Redirect to the home page
@@ -69,7 +55,7 @@ class Upload extends React.Component {
         <div className="card border-0 shadow my-5 home-container">
           <div className="card-body p-5">
             <div className="">
-              <h2>Upload</h2>
+              <h2>New Joke</h2>
 
               <div>
                 <form
@@ -77,33 +63,25 @@ class Upload extends React.Component {
                   method="POST"
                   encType="multipart/form-data"
                 >
-                  <label>Name</label>
+                  <label>Title</label>
                   <input
                     className="form-control mb-4"
+                    placeholder="Insert Joke Title Here"
                     type="text"
-                    name="name"
+                    name="title"
                     onChange={e => {
                       this.handleInputChange(e);
                     }}
                   />
 
-                  <label>Description</label>
+                  <label>Joke</label>
                   <input
-                    className="form-control mb-4"
+                    className="form-control mb-4 input-lg"
+                    placeholder="Insert Joke Here"
                     type="text"
-                    name="description"
+                    name="joke"
                     onChange={e => {
                       this.handleInputChange(e);
-                    }}
-                  />
-
-                  <label>Midi File (.mid only)</label>
-                  <input
-                    className="form-control mb-4"
-                    type="file"
-                    name="file"
-                    onChange={e => {
-                      this.handleFileInputChange(e);
                     }}
                   />
 

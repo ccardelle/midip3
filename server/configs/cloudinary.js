@@ -10,8 +10,8 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: "midi", // The name of the folder in cloudinary
-  allowedFormats: ["jpg", "png", "mid", "midi", "wav", "mp3"],
+  folder: "profile", // The name of the folder in cloudinary
+  allowedFormats: ["jpg", "png", "bmp"],
   filename: function(req, file, cb) {
     console.log(file, 24352345);
     cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name

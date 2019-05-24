@@ -39,20 +39,20 @@ app.use(cookieParser());
 
 // Set the public folder to "~/client/build/"
 // Example: http://localhost:5000/favicon.ico => Display "~/client/build/favicon.ico"
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.use(express.static(path.join(__dirname, "../client/uploads")));
+// app.use(express.static(path.join(__dirname, "../client/uploads")));
 
-app.use(express.static(path.join(__dirname, "uploads")));
+// app.use(express.static(path.join(__dirname, "uploads")));
 
 //app.use('/static', express.static(path.join(__dirname, 'src/client/public')))
 
 //,exp.directory(__dirname + '/public/images'));
 
-//app.use(express.static("./uploads"));
+// app.use(express.static("./uploads"));
 
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+// app.use(express.static(path.join(__dirname, "public")));
+// app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // Enable authentication using session + passport
 app.use(

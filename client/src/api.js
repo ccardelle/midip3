@@ -86,43 +86,54 @@ export default {
       .catch(errHandler);
   },
 
-  addPicture(file) {
-    const formData = new FormData();
-    formData.append("picture", file);
+  upload(data) {
+    let user = localStorage.getItem("user");
+    console.log("API POST +=+=+=+=", data, JSON.parse(user)._id);
     return service
-      .post("/endpoint/to/add/a/picture", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      })
-      .then(res => res.data)
-      .catch(errHandler);
-  },
-  upload(uploadInfo, data) {
-    console.log(
-      "the info from the form to the api component >>>>>>>>>>>>> ",
-      uploadInfo,
-      "------------------- ",
-      data
-    );
-    const formData = new FormData();
-    formData.append("file", uploadInfo);
+      .post("/upload", data, JSON.parse(user)._id)
 
-    return service
-      .post("/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      })
-      .then(res => {
-        console.log("adfasdfsaf", res);
-        // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
-        // localStorage.setItem("user", JSON.stringify(res.data));
-        return res.data;
-      })
+      .then(res => res.data)
       .catch(errHandler);
   }
 };
+
+// addPicture(file) {
+//   const formData = new FormData();
+//   formData.append("picture", file);
+//   return service
+//     .post("/endpoint/to/add/a/picture", formData, {
+//       headers: {
+//         "Content-Type": "multipart/form-data"
+//       }
+//     })
+//     .then(res => res.data)
+//     .catch(errHandler);
+// },
+//   upload(uploadInfo, data) {
+//     console.log(
+//       "the info from the form to the api component >>>>>>>>>>>>> ",
+//       uploadInfo,
+//       "------------------- ",
+//       data
+//     );
+//     const formData = new FormData();
+//     formData.append("file", uploadInfo);
+
+//     return service
+//       .post("/upload", formData, data, {
+//         headers: {
+//           "Content-Type": "multipart/form-data"
+//         }
+//       })
+//       .then(res => {
+//         console.log("Returned Data", res);
+//         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
+//         // localStorage.setItem("user", JSON.stringify(res.data));
+//         return res.data;
+//       })
+//       .catch(errHandler);
+//   }
+// };
 
 // formData.body = file.description
 
